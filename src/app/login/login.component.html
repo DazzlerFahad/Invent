@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+            <div class="col-lg-12 login-key">
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </div>
+            <div class="col-lg-12 login-title">
+                Login Here!<hr>
+                <h6>Enter Your Email And Password</h6>
+            </div>
+            
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">
+                    <form #loginForm="ngForm" (ngSubmit)="login()">
+                        
+                        <small class="text-danger">{{msg}}</small>
+                        <div class="form-group">
+                            <label class="form-control-label">Email Address</label>
+                            <input  type="text" class="form-control" name="email" [(ngModel)]="registration.email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"  #email="ngModel"
+                             [class.is-invalid]="email.invalid && email.touched"
+                            >
+                           <small class="text-danger" [class.d-none]="email.valid || email.untouched">*Email is required!</small>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Password</label>
+                            <input  type="password" class="form-control" name="password" [(ngModel)]="registration.password" required #password="ngModel"
+                            [class.is-invalid]="password.invalid && password.touched"
+                            >
+                            <small class="text-danger" [class.d-none]="password.valid || password.untouched">*Password is required!</small>
+                        </div>
+
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text">
+                                <!-- Error Message -->
+                                <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 30px;">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div>  
+                    </div>
+                    <a style="color:white; margin-top:10px" routerLink="/signup" >New user? Click To Signup!!</a>
+                </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-2"></div> -->
+        </div>
+    </div>
+</div>
+
+
+
+<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css' rel='stylesheet'
+    type='text/css'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'
+    type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
